@@ -1,0 +1,55 @@
+.ofertas-page {
+  padding-bottom: 80px;
+}
+
+.ofertas-header {
+  background: radial-gradient(circle at 90% 10%, rgba(239, 68, 68, 0.12) 0%, rgba(248, 250, 252, 0) 50%),
+              #ffffff;
+  border-bottom: 1px solid var(--border-color);
+  padding: 40px 24px;
+  margin-bottom: 32px;
+}
+
+.ofertas-header__container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.ofertas-eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--sale);
+  letter-spacing: 0.08em;
+  background: var(--sale-light);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  margin-bottom: 8px;
+}
+
+.ofertas-header h1 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+  letter-spacing: -0.02em;
+}
+
+.ofertas-header p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  max-width: 600px;
+}
+
+.ofertas-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (max-width: 640px) {
+  .ofertas-container {
+    padding: 0 16px;
+  }
+}

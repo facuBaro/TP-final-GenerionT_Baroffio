@@ -1,0 +1,361 @@
+.navbar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(250, 249, 246, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 4px 20px rgba(32, 42, 39, 0.035);
+}
+
+.navbar {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 12px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+/* Brand */
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.22rem;
+  font-weight: 750;
+  color: var(--text-primary);
+  letter-spacing: -0.035em;
+  transition: transform var(--transition);
+  flex-shrink: 0;
+}
+
+.navbar__brand:hover {
+  opacity: 0.82;
+}
+
+.brand-mark {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 11px;
+  background: var(--primary);
+}
+
+.brand-mark svg {
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: #f6f5f1;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+}
+
+.navbar__logo-text {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-weight: 750;
+}
+
+.navbar__logo-caption {
+  color: var(--text-muted);
+  font-size: 0.63rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Search Bar */
+.navbar__search-form {
+  flex: 1;
+  max-width: 380px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar__search-input-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.navbar__search-icon {
+  position: absolute;
+  left: 12px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.navbar__search-input {
+  width: 100%;
+  padding: 10px 36px 10px 36px;
+  font-size: 0.9rem;
+  background: #f1f0eb;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-primary);
+  outline: none;
+  transition: var(--transition);
+}
+
+.navbar__search-input:focus {
+  background: #ffffff;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-glow);
+}
+
+.navbar__search-clear {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+.navbar__search-clear:hover {
+  color: var(--text-primary);
+}
+
+.navbar__search-btn {
+  display: none;
+  padding: 10px 18px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  background: var(--primary);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.navbar__search-btn:hover {
+  background: var(--primary-hover);
+}
+
+/* Menu Links */
+.navbar__menu {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+}
+
+.navbar__link {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 13px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  border-radius: 8px;
+  transition: var(--transition);
+  position: relative;
+}
+
+.navbar__link:hover {
+  color: var(--primary);
+  background: var(--primary-light);
+}
+
+.navbar__link--active {
+  color: var(--primary) !important;
+  background: var(--primary-light);
+  font-weight: 700;
+}
+
+/* Actions & Cart */
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar__cart-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 13px;
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  transition: var(--transition);
+  box-shadow: none;
+}
+
+.navbar__cart-btn:hover {
+  background: var(--primary-light);
+  border-color: #cad9d2;
+}
+
+.navbar__cart-btn--active {
+  outline: 2px solid var(--primary-hover);
+  outline-offset: 2px;
+}
+
+.navbar__cart-icon {
+  font-size: 1.1rem;
+}
+
+.navbar__cart-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  background: var(--primary);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  border-radius: var(--radius-full);
+  transition: var(--transition);
+}
+
+.navbar__cart-badge.has-items {
+  background: var(--accent);
+  color: #ffffff;
+  animation: pulseBadge 0.3s ease;
+}
+
+@keyframes pulseBadge {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.25); }
+  100% { transform: scale(1); }
+}
+
+.navbar__mobile-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 6px 10px;
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .navbar__search-form {
+    max-width: 240px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 16px;
+    gap: 12px;
+  }
+
+  .navbar__mobile-toggle {
+    display: block;
+  }
+
+  .navbar__menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border-bottom: 1px solid var(--border-color);
+    padding: 16px;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .navbar__menu.is-open {
+    display: block;
+  }
+
+  .navbar__links {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+  }
+
+  .navbar__link {
+    padding: 12px 16px;
+    border-radius: var(--radius-md);
+  }
+
+  .navbar__cart-text {
+    display: none;
+  }
+
+  .navbar__search-form {
+    display: flex;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .navbar__search-input {
+    padding: 9px 34px 9px 34px;
+    font-size: 0.82rem;
+  }
+
+  .navbar__search-btn {
+    display: none;
+  }
+
+  .navbar__logo-caption {
+    display: none;
+  }
+}
+
+@media (max-width: 460px) {
+  .navbar {
+    gap: 8px;
+    padding-inline: 12px;
+  }
+
+  .navbar__brand {
+    gap: 7px;
+    font-size: 1.08rem;
+  }
+
+  .brand-mark {
+    width: 32px;
+    height: 32px;
+  }
+
+  .navbar__search-icon {
+    left: 10px;
+  }
+
+  .navbar__search-input {
+    padding-left: 30px;
+    padding-right: 8px;
+  }
+
+  .navbar__cart-btn {
+    padding: 7px 9px;
+  }
+
+  .navbar__actions {
+    gap: 7px;
+  }
+}
